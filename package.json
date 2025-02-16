@@ -2,8 +2,10 @@
   "name": "bot",
   "version": "1.0.0",
   "description": "",
+  "packageManager": "npm@latest",
 
   "scripts": {
+    "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.17.3",
-    "dotenv": "^16.4.7",
-    "packageManager": "npm@latest"
+    "dotenv": "^16.4.7"
   }
 }
