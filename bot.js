@@ -1,6 +1,6 @@
 import "dotenv/config";
-
 import { Client, GatewayIntentBits } from "discord.js";
+import http from "http"; // Tambahkan module HTTP
 
 // 🔥 Ganti dengan token bot kamu
 const TOKEN = process.env.DISCORD_SECRET_TOKEN;
@@ -70,3 +70,12 @@ bot.on("guildMemberAdd", (member) => {
 
 // ✅ Jalankan bot
 bot.login(TOKEN);
+
+// ✅ Tambahkan server untuk health check di Koyeb
+const PORT = process.env.PORT || 8000;
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Bot is running");
+}).listen(PORT, () => {
+  console.log(`🌍 Health check server running on port ${PORT}`);
+});
